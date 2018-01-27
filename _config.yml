@@ -17,7 +17,7 @@ title: Threedays
 author: Joker
 email: 120361744@qq.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Before an Java developmer. Now as an JavaScript developmer.
+  个人技术博客，主要记录技术成长，很少会分享自己其他想法。Before an Java developmer. Now as an JavaScript developmer.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://threedays.top" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  sponia-joker
@@ -31,15 +31,20 @@ disqus:
   shortname: threedays-official-site
   
 # social
-social_sites:
-  github: sponia-joker
+social:
+  name: sponia-joker
+  links:
+    - https://github.com/sponia-joker
 
+google_site_verification: hYfGDtGsedygQytxYfi7iyXmWL8lVVExRfPTf7e5dNI
 
 # Build settings
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
