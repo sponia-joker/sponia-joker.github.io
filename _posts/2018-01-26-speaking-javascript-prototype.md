@@ -86,7 +86,7 @@ console.log(
 > Every object created by a constructor has an implicit reference (called the object’s prototype) to the value of its constructor’s “prototype” property. Furthermore, a prototype may have a non-null implicit reference to its prototype, and so on; this is called the prototype chain...
 
 通过上面的描述我们可以得出以下结论
-1. 构造函数就是一个函数，函数中包含prototype属性用来实现基于原型的继承和共享属性。
+1. 构造函数就是一个函数，函数中包含prototype属性用来实现基于原型的继承和共享属性。通过Function.prototype.bind方法构造出来的函数是个例外，它没有prototype属性。
 2. 通过被构造函数创建的对象都有一个隐式的引用指向构造函数的prototype属性。
 3. 构造函数的prototype属性值同样也是普通一个对象，它也有一个隐式的引用(non-null)指向它的原型对象。这样才形成了原型链，所以通过原型链去查找属性值时候，并不会访问prototype属性，而是obj.__proto__.__proto__...这样一层一层去寻找。
 
