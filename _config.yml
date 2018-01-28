@@ -17,7 +17,7 @@ title: Threedays
 author: Joker
 email: 120361744@qq.com
 description: >- # this means to ignore newlines until "baseurl:"
-  个人技术博客，主要记录技术成长，很少会分享自己其他想法。Before an Java developmer. Now as an JavaScript developmer.
+  个人技术博客，主要记录技术成长，很少会分享自己其他想法。Before a java developer. Now as a Front-end developer .
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://threedays.top" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  sponia-joker
