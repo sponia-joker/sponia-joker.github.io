@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "TSL与SSL之间关系"
+title:  "TLS与SSL之间关系"
 date:   2018-06-13 11:34:15 +0800
 categories: 翻译
 ---
 
 原文地址：[SSL vs. TLS - What's the Difference?](https://www.globalsign.com/en/blog/ssl-vs-tls-difference/)
 
-互联网安全有很多让人费解的首字母缩写单词，列如：SSL,TLS,ECC,SHA，而且还在不断增加。这些缩写字母让我们很难理解其含义。 也许我们被问到的最多的是 -   [SSL](https://www.globalsign.com/en/ssl/)（安全套接层）和TLS（安全传输层）之间的区别是什么？你想加强网站安全(或者其他类型通信)。但是你确定你需要SSL ?TSL ?还是SSL和TLS ? 让我们弄明白它。<!-- more -->
+互联网安全有很多让人费解的首字母缩写单词，列如：SSL,TLS,ECC,SHA，而且还在不断增加。这些缩写字母让我们很难理解其含义。 也许我们被问到的最多的是 -   [SSL](https://www.globalsign.com/en/ssl/)（安全套接层）和TLS（安全传输层）之间的区别是什么？你想加强网站安全(或者其他类型通信)。但是你确定你需要SSL ?TLS ?还是SSL和TLS ? 让我们弄明白它。<!-- more -->
 
 ## SSL和TLS简史
 
@@ -46,6 +46,10 @@ SSL2.0和SSL3.0已经被IEFT组织废弃（分别在2011年，2015年）多年�
 有关 [如何在流行服务器类型上禁用SSL 2.0 和 3.0 的指导](https://support.globalsign.com/customer/portal/articles/2356063)，包括Apache，NGINX和Tomcat，请阅读我们相关支持文章。
 
 所以SSL和TLS之间到底有什么不同？在实际对话中，没有太多不同并且很多人继续使用术语SSL。就服务器配置角度而言，在漏洞，过时的密码套件和浏览器安全警告方面就会存在不同。当涉及到你的服务时，你应该仅仅开启TLS协议。
+
+
+
+
 
 
 
