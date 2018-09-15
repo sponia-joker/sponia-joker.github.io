@@ -23,7 +23,7 @@ categories: javascript
 
 虽然可以直接设置一个对象的原型为另外一个对象，从而获得新的方法和属性。如下所示：
 
-```
+```javascript
 // Generic prototype for all letters.
 let letter = {
   getNumber() {
@@ -54,7 +54,7 @@ console.log(
 
 下面利用构造函数来实现上述同样功能
 
-```
+```javascript
 function Letter(number) {
   this.number = number
 }
