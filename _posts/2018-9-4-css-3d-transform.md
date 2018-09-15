@@ -63,19 +63,19 @@ Inherited:	no
 
 我并不想直接引用规范里的介绍来说明perspective属性。简单来说就是设置了perspective属性的元素，该元素就具有立体空间的表现能力。不过仅对该元素的子元素有效，元素本身并不具有立体空间表现能力.perspective值定义了中视线的长度，直观说法就是用户眼睛到屏幕的距离，官方说法就是z=0的平面和用户之间的距离，每一个3d元素z>0则越大，z<0则越小，3d效果的强烈程度随着perspective值得增大而减小，当perspective值为none，小于或等于0不存在 3d变形。
 
-<p data-height="265" data-theme-id="dark" data-slug-hash="aaGwvM" data-default-tab="css,result" data-user="sponia-joker" data-pen-title="no-perspective" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/sponia-joker/pen/aaGwvM/">no-perspective</a> by joker (<a href="https://codepen.io/sponia-joker">@sponia-joker</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="265" data-theme-id="dark" data-slug-hash="aaGwvM" data-default-tab="css,result" data-user="sponia-joker" data-pen-title="no-perspective" class="codepen">See the Pen <a href="https://codepen.io/sponia-joker/pen/aaGwvM/">no-perspective</a> by joker (<a href="https://codepen.io/sponia-joker">@sponia-joker</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 建议在进行3d transform时候，采用上面的html结构。舞台元素，容器元素，变形元素这样可以让模型保持简单而且容易理解。在上面demo中，我们将子元素沿Y轴旋转了45deg，但是页面并没有表现出我们期待的效果，实际效果是变形元素的宽度缩小。这是因为我们并没有给父元素设置perspective属性，元素不具备立体空间的表现能力，最终表现的是元素沿Y轴旋转之后再屏幕上的投影，所以宽度会缩小。但我们打开注释后，就会是我们期待的效果。大家可以在codepen上手动实践下。
 
 `perspective`属性有两种书写形式，一种用在舞台元素上（动画元素们的共同父辈元素）；第二种就是用在当前变形元素上，与transform的其他属性写在一起。如下所示
 
-<p data-height="265" data-theme-id="dark" data-slug-hash="GXdEVO" data-default-tab="css,result" data-user="sponia-joker" data-pen-title="perspective-function" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/sponia-joker/pen/GXdEVO/">perspective-function</a> by joker (<a href="https://codepen.io/sponia-joker">@sponia-joker</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="265" data-theme-id="dark" data-slug-hash="GXdEVO" data-default-tab="css,result" data-user="sponia-joker" data-pen-title="perspective-function"  class="codepen">See the Pen <a href="https://codepen.io/sponia-joker/pen/GXdEVO/">perspective-function</a> by joker (<a href="https://codepen.io/sponia-joker">@sponia-joker</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 最后的效果和在父元素上设置perspective属性是一模一样。但两个属性还是有很大区别，之所以上面效果是一样，是因为舞台上只有一个元素，如果有多个元素就会表现出差异。
 
-<p data-height="265" data-theme-id="dark" data-slug-hash="yxjoRY" data-default-tab="css,result" data-user="sponia-joker" data-pen-title="perspective-vs-perspective-function" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/sponia-joker/pen/yxjoRY/">perspective-vs-perspective-function</a> by joker (<a href="https://codepen.io/sponia-joker">@sponia-joker</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="265" data-theme-id="dark" data-slug-hash="yxjoRY" data-default-tab="css,result" data-user="sponia-joker" data-pen-title="perspective-vs-perspective-function"  class="codepen">See the Pen <a href="https://codepen.io/sponia-joker/pen/yxjoRY/">perspective-vs-perspective-function</a> by joker (<a href="https://codepen.io/sponia-joker">@sponia-joker</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 显然当具有多个元素时候，perspective和perspective()函数具有不同表现效果。主要是因为在父元素上设置perspective属性，所有子元素具有相同的视点，而配合transform使用的perspective函数每个元素都拥有各自不同的视点。可以理解成1个人看 vs 5个人看。更加不可思议的是但设置perspective为100px时,给父元素设置perspective属性的demo中，倒数第二个元素会消失，这里读者可以仔细思考下，如果想不明白可以评论留言。
@@ -92,7 +92,7 @@ Transform-style属性定义了嵌套元素如何在3D空间进行渲染，当设
 元素默认会保持扁平化，又因为该属性无法继承，因此为了在3D空间中保存元素的层次结构需要在层次结构中的每个祖先元素都设置transform-style值为preserve-3d.由于transform-style只会影响元素的子元素，所以层次结构中的叶子节点不需要设置。
 一般我们都是设置transform-style属性值为preserve-3d，为了演示两者的不同，可以通过点击codepen中的按钮交替显示
 
-<p data-height="265" data-theme-id="dark" data-slug-hash="OoZrGq" data-default-tab="css,result" data-user="sponia-joker" data-pen-title="transform-style" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/sponia-joker/pen/OoZrGq/">transform-style</a> by joker (<a href="https://codepen.io/sponia-joker">@sponia-joker</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="265" data-theme-id="dark" data-slug-hash="OoZrGq" data-default-tab="css,result" data-user="sponia-joker" data-pen-title="transform-style" class="codepen">See the Pen <a href="https://codepen.io/sponia-joker/pen/OoZrGq/">transform-style</a> by joker (<a href="https://codepen.io/sponia-joker">@sponia-joker</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 
@@ -119,7 +119,7 @@ Inherited:no
 
 “backface-visibility”属性决定转换后的元素的“背面”是否对用户可见。就好比一枚硬币，当我们沿Y轴旋转180deg时候，此时是背面朝向我们，backface-visibility就是用来设置背面是否可见。backface-visibility经常用来实现一些翻转效果
 
-<p data-height="265" data-theme-id="dark" data-slug-hash="RYyvYX" data-default-tab="css,result" data-user="sponia-joker" data-pen-title="perspect-visibility" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/sponia-joker/pen/RYyvYX/">perspect-visibility</a> by joker (<a href="https://codepen.io/sponia-joker">@sponia-joker</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="265" data-theme-id="dark" data-slug-hash="RYyvYX" data-default-tab="css,result" data-user="sponia-joker" data-pen-title="perspect-visibility" class="codepen">See the Pen <a href="https://codepen.io/sponia-joker/pen/RYyvYX/">perspect-visibility</a> by joker (<a href="https://codepen.io/sponia-joker">@sponia-joker</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 ### 参考资料
