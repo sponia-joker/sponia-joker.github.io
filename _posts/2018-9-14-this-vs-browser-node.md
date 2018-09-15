@@ -8,7 +8,7 @@ categories: javascript
 
 ### 前言
 
-JavaScript中this指向一直都是刚接触JavaScript或者已经有一两年JavaScript编程经验人员容易弄混或者记不清的地方。this的复杂性主要是由this只有在调用时才能确定其值而不是在声明时和主流认为JavaScript语言设计缺陷导致。this在浏览器和node环境的细微差别，更加增加了理解难度。在JavaScript语言精粹中作者从方法调用，函数调用，构造器调用和类apply调用分别讲解了this的绑定。本文也会从这几方面介绍this，同时会介绍node，浏览器环境的轻微不同来帮助读者理解，也方便自己以后复习。
+JavaScript中this指向一直都是刚接触JavaScript或者已经有一两年JavaScript编程经验人员容易弄混或者记不清的地方。this的复杂性主要是由this只有在调用时才能确定其值而不是在声明时和主流认为JavaScript语言设计缺陷导致。this在浏览器和node环境的细微差别，更加增加了理解难度。在JavaScript语言精粹中作者从方法调用，函数调用，构造器调用和类apply调用分别讲解了this的绑定。本文也会从这几方面介绍this，同时会介绍node，浏览器环境的轻微不同来帮助读者理解，也方便自己以后复习。<!-- more -->
 
 ### 方法调用
 
